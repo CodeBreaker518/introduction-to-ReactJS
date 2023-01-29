@@ -16,20 +16,19 @@ const fakeToDos = [
 function App() {
   return (
     // components
-      <React.Fragment>
-
-      <TodoCounter />
-      <TodoSearch />
-      <TodoList>
-        {fakeToDos.map( todo => (
-          <TodoItem key={todo.text} text={todo.text} />
-        ))}
-      </TodoList>
-      <CreateTodoButton />
-
-    </React.Fragment> 
-    // React.Fragment avoid creating unnecessary div's,
-    // we can also use <>components..</>
+      <>
+        <TodoCounter />
+        <TodoSearch />
+        <TodoList>
+          {fakeToDos.map( todo => (
+            <TodoItem key={todo.text} text={todo.text} />
+          ))}
+        </TodoList>
+        <CreateTodoButton />
+        
+      </> 
+      // <React.Fragment/> avoid creating unnecessary div's,
+      // we can also use <>components..</>
   )
 }
 
