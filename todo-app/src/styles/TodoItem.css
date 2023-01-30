@@ -20,14 +20,14 @@
     transition: .2s;
 }
 [type="checkbox"]:checked+span:not(.lever):before{
-      top: -4px;
+    top: -4px;
     left: -5px;
     width: 12px;
     height: 22px;
     border-top: 2px solid transparent !important;
     border-left: 2px solid transparent !important;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
+    border-right: 2px solid green !important;
+    border-bottom: 2px solid green!important;
     transform: rotate(40deg);
     backface-visibility: hidden;
     transform-origin: 100% 100%;
