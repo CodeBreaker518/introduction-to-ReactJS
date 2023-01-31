@@ -4,6 +4,7 @@ import { TodoCounter } from "./components/TodoCounter.jsx";
 import { TodoItem } from "./components/TodoItem.jsx";
 import { TodoList } from "./components/TodoList.jsx";
 import { TodoSearch } from "./components/TodoSearch.jsx";
+import { Waves } from "./components/Waves.jsx";
 // import './App.css';
 
 const fakeToDos = [
@@ -17,6 +18,7 @@ function App() {
   return (
     // components
       <>
+        <Waves />
         <TodoCounter />
         <TodoSearch />
         <TodoList>
