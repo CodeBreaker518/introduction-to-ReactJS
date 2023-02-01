@@ -1,3 +1,5 @@
+import '../styles/TodoList.css'
+
 export function TodoList(props) {
   //destructuring object props
   const {children} = props

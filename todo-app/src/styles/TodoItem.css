@@ -1,3 +1,6 @@
+.todo-list-item div:nth-child(1){
+  border-radius: 10px !important;
+}
 .text-item{
   font-size: 24px !important; 
   color: white;
