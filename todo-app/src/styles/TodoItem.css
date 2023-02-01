@@ -8,6 +8,10 @@
 .text-item::before{
   box-sizing: unset;
 }
+.text-item--completed{
+  text-decoration: line-through;
+  color: #D0D3D4;
+}
 
 [type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after{
   content: '';

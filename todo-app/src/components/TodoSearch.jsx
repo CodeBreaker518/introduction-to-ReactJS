@@ -1,15 +1,28 @@
 import '../styles/TodoSearch.css'
-export function TodoSearch() {
+import React from 'react';
+
+export function TodoSearch({searchValue, setSearchValue}) {
+
+  const onSearchValueChange = (event) => {
+    console.log(event.target.value)
+    setSearchValue(event.target.value)
+  }
   return (
     <>
     <div className="container" >
-      <div class="row" >
-        <div class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="material-icons prefix">search</i>
-              <input type="text" id="autocomplete-input" class="autocomplete" />
-              <label for="autocomplete-input">Search...</label>
+      <div className="row" >
+        <div className="col s12">
+          <div className="row">
+            <div className="input-field col s12">
+              <i className="material-icons prefix">search</i>
+              <input 
+              type="text" 
+              id="autocomplete-input" 
+              className="autocomplete"
+              value={searchValue}
+              onChange={onSearchValueChange}
+              />
+              <label htmlFor="autocomplete-input">Search...</label>
             </div>
           </div>
         </div>

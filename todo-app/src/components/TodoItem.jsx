@@ -1,30 +1,36 @@
 import '../styles/TodoItem.css'
 
 export function TodoItem(props) {
-  const {text} = props
+
+  const onComplete = event => {
+    event.target.toggleAttribute('checked')
+    alert(`completaste el todo ${props.text}`)
+  }
+  const onDelete = () => {
+    alert('borraste un item')
+  }
   return (
     <li className="todo-list-item">
 
-      <div class="row pink darken-3 valign-wrapper">
+      <div className="row pink darken-3 valign-wrapper">
 
-        <div class="col s9">
+        <div className="col s9">
           <p>
             <label>
-              <input type="checkbox" />
-              <span className="text-item">{text}</span>
+              <input onClick={onComplete} type="checkbox"/>
+              <span className={`text-item ${props.completed && 'text-item--completed'}`}>{props.text}</span>
             </label>
           </p>
         </div>
 
-        <div class="col s3 m2">
+        <div className="col s3 m2">
           <p>
-            <a href='#!'class="btn btn-small waves-effect waves-light red align-right">
-              <i class="material-icons">remove</i>
+            <a onClick={onDelete} href='#!'className="btn btn-small waves-effect waves-light red align-right">
+              <i className="material-icons">remove</i>
             </a>
           </p>
         </div>
       </div>
-
     </li>
   )
 }
