@@ -19,7 +19,7 @@ export function TodoItem(props) {
         <div class="col s3 m2">
           <p>
             <a href='#!'class="btn btn-small waves-effect waves-light red align-right">
-              <i class="material-icons">highlight_off</i>
+              <i class="material-icons">remove</i>
             </a>
           </p>
         </div>
