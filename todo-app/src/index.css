@@ -1,3 +1,6 @@
 body{
+  font-family: 'Comfortaa', cursive;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Outfit', sans-serif;
   background-image: url('../public/waves.svg');
 }

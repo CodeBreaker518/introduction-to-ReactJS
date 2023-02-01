@@ -1,3 +1,4 @@
+import '../styles/TodoSearch.css'
 export function TodoSearch() {
   return (
     <>
