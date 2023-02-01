@@ -29,8 +29,8 @@
     height: 22px;
     border-top: 2px solid transparent !important;
     border-left: 2px solid transparent !important;
-    border-right: 2px solid green !important;
-    border-bottom: 2px solid green!important;
+    border-right: 2px solid #82E0AA  !important;
+    border-bottom: 2px solid #82E0AA !important;
     transform: rotate(40deg);
     backface-visibility: hidden;
     transform-origin: 100% 100%;
