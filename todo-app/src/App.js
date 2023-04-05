@@ -1,11 +1,18 @@
+//REACT LIBRARIES
 import React from 'react'
-import { useState } from 'react'
+// COMPONENTS
 import { CreateTodoButton } from './components/CreateTodoButton.jsx'
 import { TodoCounter } from './components/TodoCounter.jsx'
 import { TodoItem } from './components/TodoItem.jsx'
 import { TodoList } from './components/TodoList.jsx'
 import { TodoSearch } from './components/TodoSearch.jsx'
+// HOOKS
+import { useState } from 'react'
+// CUSTOM HOOKS
+import { useLocalStorage } from './hooks/useLocalStorage.js'
 
+// initial todos to show, they can be modified or deleted
+// modifications will persist into localStorage.
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: false },
   { text: 'Tomar curso de intro a React', completed: false },
@@ -13,14 +20,15 @@ const defaultTodos = [
   { text: 'Tomar agua a las 10', completed: false },
 ]
 
-// components names starts with UpperCase
 function App() {
-  const [todos, setTodos] = useState(defaultTodos)
+  // Using custom hook ''
+  const [todos, setTodos] = useLocalStorage('todos', defaultTodos)
+
   const [searchValue, setSearchValue] = useState('')
   const completedTodos = todos.filter((todo) => todo.completed).length
   const totalTodos = todos.length
 
-  // searching to do's that match with input value
+  // searching todos that match with input value
   let searchedTodos = []
   if (searchValue.length < 1) {
     searchedTodos = todos

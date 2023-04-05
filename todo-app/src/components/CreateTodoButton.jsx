@@ -6,7 +6,7 @@ export function CreateTodoButton(props) {
   }
   return (
     <>
-      <div className='todo-create-btn row'>
+      <div className='todo-create-btnrow'>
         <div className='col s12 btn-add-item center-align'>
           <button onClick={onClickButton} className='btn-floating btn-large waves-effect waves-light purple '>
             <i className='material-icons'>add</i>

@@ -9,7 +9,6 @@ export function TodoItem(props) {
   const itemRef = useRef(null)
 
   const completeTodo = (event) => {
-    console.log(`Completaste el todo ${text}`)
     onComplete()
   }
 
