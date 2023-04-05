@@ -27,7 +27,7 @@ export function TodoItem(props) {
         <div className='col s9'>
           <p>
             <label>
-              <input onClick={completeTodo} type='checkbox' checked={completed ? 'checked' : ''} />
+              <input onChange={completeTodo} type='checkbox' checked={completed ? 'checked' : ''} />
               <span className={`text-item ${completed ? 'text-item--completed' : ''}`}>{props.text}</span>
             </label>
           </p>

@@ -12,7 +12,7 @@ export function TodoSearch({ searchValue, setSearchValue }) {
   }
   return (
     <>
-      <div className='container'>
+      <div className='todo-search container '>
         <div className='row'>
           <div className='col s12'>
             <div className='row'>
