@@ -1,7 +1,14 @@
 import '../styles/TodoCounter.css'
+// import { useEffect } from 'react'
 
 export function TodoCounter(props) {
   const { total, completed } = props
+
+  // set dinamically title
+  // useEffect(() => {
+  //   document.title = `Tienes ${total - completed} tareas pendientes`
+  // }, [completed, total])
+
   return (
     <h2 className='todo-counter'>
       {total === 0 && completed === 0 ? (

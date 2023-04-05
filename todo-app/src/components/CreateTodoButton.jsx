@@ -1,5 +1,3 @@
-import '../styles/CreateTodoButton.css'
-
 export function CreateTodoButton(props) {
   const onClickButton = () => {
     console.log('creaste un item')
