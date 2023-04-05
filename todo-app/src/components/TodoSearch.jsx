@@ -2,12 +2,11 @@ import '../styles/TodoSearch.css'
 import React from 'react'
 
 export function TodoSearch({ searchValue, setSearchValue }) {
-  // set search value, on changing
   const onSearchValueChange = (event) => {
     console.log(event.target.value)
     setSearchValue(event.target.value)
   }
-  // autoselect text input after search
+  // autoselect text input
   const handleFocus = (e) => {
     e.currentTarget.select()
   }

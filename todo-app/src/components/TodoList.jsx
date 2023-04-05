@@ -7,10 +7,7 @@ export function TodoList(props) {
     <>
       <div className='todo-list container'>
         <section>
-          <ul className='collection'>
-            {children}
-            {/* props.children = what's inside <TodoList>....</TodoList> */}
-          </ul>
+          <ul className='collection'>{children}</ul>
         </section>
       </div>
     </>

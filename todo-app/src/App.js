@@ -9,7 +9,7 @@ import { TodoSearch } from './components/TodoSearch.jsx'
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: false },
   { text: 'Tomar curso de intro a React', completed: false },
-  { text: 'Tomar agua a las 2', completed: false },
+  { text: 'Pasear al perro', completed: false },
   { text: 'Tomar agua a las 10', completed: false },
 ]
 
@@ -17,11 +17,12 @@ const defaultTodos = [
 function App() {
   const [todos, setTodos] = useState(defaultTodos)
   const [searchValue, setSearchValue] = useState('')
-  const totalTodos = todos.length
   const completedTodos = todos.filter((todo) => todo.completed).length
+  const totalTodos = todos.length
 
+  // searching to do's that match with input value
   let searchedTodos = []
-  if (!searchValue.length >= 1) {
+  if (searchValue.length < 1) {
     searchedTodos = todos
   } else {
     searchedTodos = todos.filter((todo) => {
@@ -31,23 +32,25 @@ function App() {
     })
   }
 
-  // mark as complete a to do
   const toggleCompleteTodo = (text) => {
-    const todoIndex = todos.findIndex((todo) => todo.text === text)
-    const newTodos = [...todos]
-    newTodos[todoIndex].completed = !newTodos[todoIndex].completed
-    setTodos(newTodos) // new list of todos updated with completed?
+    setTodos(
+      todos.map((todo) => {
+        if (todo.text === text) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          }
+        }
+        return todo
+      })
+    )
   }
-  // delete to do's
+
   const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex((todo) => todo.text === text)
-    const newTodos = [...todos]
-    newTodos.splice(todoIndex, 1)
-    setTodos(newTodos) // new list of todos updated with completed?
+    setTodos(todos.filter((todo) => todo.text !== text))
   }
 
   return (
-    // components
     <>
       <TodoCounter total={totalTodos} completed={completedTodos} />
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
@@ -64,8 +67,6 @@ function App() {
       </TodoList>
       <CreateTodoButton />
     </>
-    // <React.Fragment/> avoid creating unnecessary div's,
-    // we can also use <>components..</>
   )
 }
 
