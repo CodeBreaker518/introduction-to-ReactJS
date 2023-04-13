@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+
 import '../styles/TodoSearch.css'
 import React from 'react'
 
@@ -16,7 +19,8 @@ export function TodoSearch({ searchValue, setSearchValue }) {
           <div className='col s12'>
             <div className='row'>
               <div className='input-field col s12'>
-                <i className='material-icons prefix'>search</i>
+                <FontAwesomeIcon icon={faMagnifyingGlass} className='material-icons prefix' />
+                {/* <i className='material-icons prefix'>search</i> */}
                 <input
                   type='text'
                   id='autocomplete-input'

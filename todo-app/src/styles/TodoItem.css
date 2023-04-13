@@ -1,6 +1,9 @@
 .todo-item {
   border-radius: 10px;
 }
+.todo-item-list {
+  margin-right: 1rem;
+}
 .text-item {
   font-size: 18px !important;
   color: white;

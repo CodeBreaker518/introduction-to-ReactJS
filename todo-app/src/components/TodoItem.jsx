@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 export function TodoItem(props) {
-  const { text, completed, onComplete, onDelete } = props
+  const { completed, onComplete, onDelete } = props
 
   const itemRef = useRef(null)
 
@@ -13,7 +13,6 @@ export function TodoItem(props) {
   }
 
   const deleteTodo = () => {
-    console.log(`Eliminaste el todo ${text}`)
     itemRef.current.classList.add('slide-out-left')
     setTimeout(() => {
       onDelete()

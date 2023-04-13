@@ -10,6 +10,8 @@ import { TodoSearch } from './components/TodoSearch.jsx'
 import { useState } from 'react'
 // CUSTOM HOOKS
 import { useLocalStorage } from './hooks/useLocalStorage.js'
+import CreateTodoModal from './components/CreateTodoModal.jsx'
+import './styles/CreateTodoModal.css'
 
 // initial todos to show, they can be modified or deleted
 // modifications will persist into localStorage.
@@ -25,6 +27,7 @@ function App() {
   const [todos, setTodos] = useLocalStorage('todos', defaultTodos)
 
   const [searchValue, setSearchValue] = useState('')
+  const [isActive, setIsActive] = useState(false)
   const completedTodos = todos.filter((todo) => todo.completed).length
   const totalTodos = todos.length
 
@@ -53,9 +56,18 @@ function App() {
       })
     )
   }
+  const createTodo = (todoName) => {
+    let newTodo = { text: todoName, completed: false }
+    setTodos([...todos, newTodo])
+    console.log(todos)
+  }
 
   const deleteTodo = (text) => {
     setTodos(todos.filter((todo) => todo.text !== text))
+  }
+
+  const toggleModal = () => {
+    setIsActive(!isActive)
   }
 
   return (
@@ -73,7 +85,8 @@ function App() {
           />
         ))}
       </TodoList>
-      <CreateTodoButton />
+      <CreateTodoButton handleClick={toggleModal} />
+      <CreateTodoModal createTodo={createTodo} isActive={isActive} handleClick={toggleModal} />
     </>
   )
 }
